@@ -1,0 +1,12 @@
+
+Important Commands:
+
+    help,               Display the commands that can be used by the user
+    items,              Display all the available products
+    cart,               Display all the items in the cart
+    logout,             Logout of the current user
+    add,                Invoke add prompt to add an item by id
+    remove,             Invoke remove prompt to remove an item by s.no
+    checkout,           Checkout the order and proceed to bill
+    update_user,        Update current user's profile
+    forgot_password,    Change the password of the current user
