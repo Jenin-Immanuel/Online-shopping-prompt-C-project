@@ -1,0 +1,11 @@
+
+Admin Commands:
+
+    add_item,           add new product in the cart
+    delete_item,        delete an existing product
+    update_stock,       update stock to an item
+    items,              display all the items in the menu
+    help,               display the help menu
+    users,              displays all the users of the application
+    orders,             see all the orders
+    logout,             Logout of the admin prompt

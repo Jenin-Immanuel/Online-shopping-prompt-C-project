@@ -49,6 +49,11 @@ void create_user() {
     fclose(fptr2);
     printf("\nConfirming details...\n...\nWelcome, %s!\n\n",reg.user);
     printf("\nRegistration Successful!\n");
+    system("cd users");
+    char command[100] = "cd users && mkdir ";
+    strcat(command, reg.user);
+    strcat(command, " && cd ..");
+    system(command);
     printf("Press any key to continue...");
     getch();
     clear_my_screen();
@@ -198,7 +203,6 @@ void delete_user() {
             fclose(fptr1);
             fclose(fptr2);
         }
-        printf("%d\n", line);
         // Delete a line from user.txt
         FILE *fptr3;
         fptr3 = fopen("./Texts/users.txt", "r");
@@ -235,6 +239,10 @@ void delete_user() {
         fclose(fptr6);
         remove("./Texts/passwords.txt");
         rename("./Texts/passwords_temp.txt", "./Texts/passwords.txt");
+        char command[100] = "cd users && rmdir ";
+        strcat(command, on_user);
+        strcat(command, " cd ..");
+        system(command);
         printf("\n\nUser deleted successfully!\n\n");
         printf("Press any key to continue...");
         getch();
@@ -261,7 +269,7 @@ void main_login() {
     main_screen();
     int option;
     printf("\n\tWelcome to our online Ecommerece platform....\n");
-    printf("\tPress '1' to Register\n\tPress '2' to Login\n\tPress '3' to Delete User\n\n");
+    printf("\tPress '1' to Register\n\tPress '2' to Login\n\tPress '3' to Delete User\n\tPress '4' to Exit\n\n");
     scanf("%d", &option);
     switch (option) {
         case 1:
@@ -273,9 +281,12 @@ void main_login() {
         case 3:
             delete_user();
             break;
+        case 4:
+            printf("\n\n\tThank you for using our online Ecommerece platform....\n\n");
+            exit(0);
+            break;
         default:
             printf("Invalid option!\n");
             break;
-    
     }
 }
